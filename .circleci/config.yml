@@ -16,8 +16,6 @@ jobs:
             - v1-dependencies-
 
       - run: npm install
-      - run: npm run audit
-      - run: npm run audit fix
 
       - save_cache:
           paths:
