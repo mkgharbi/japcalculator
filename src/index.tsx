@@ -9,7 +9,7 @@ import { theme } from './style/theme'
 import { BrowserTracing } from '@sentry/tracing'
 
 Sentry.init({
-  dsn: process.env.REACT_APP_SENTRY_DSN,
+  dsn: process.env.REACT_APP_SENTRY,
   integrations: [new BrowserTracing()],
 
   // Set tracesSampleRate to 1.0 to capture 100%
