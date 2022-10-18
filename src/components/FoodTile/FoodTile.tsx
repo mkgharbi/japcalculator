@@ -1,43 +1,43 @@
-import React, { ChangeEvent } from "react";
-import { withStyles } from "@material-ui/core/styles";
-import { CSSProperties } from "@material-ui/styles";
+import React, { ChangeEvent } from 'react'
+import { withStyles } from '@material-ui/core/styles'
+import { CSSProperties } from '@material-ui/styles'
 
-import { CustomTheme } from "../../style/theme";
+import { CustomTheme } from '../../style/theme'
 
 type ClassNames =
-  | "container"
-  | "nameContainer"
-  | "name"
-  | "controls"
-  | "value"
-  | "button"
-  | "input"
-  | "image";
+  | 'container'
+  | 'nameContainer'
+  | 'name'
+  | 'controls'
+  | 'value'
+  | 'button'
+  | 'input'
+  | 'image'
 interface OwnProps {
-  classes: Record<ClassNames, string>;
-  imgSrc: string;
-  name: string;
-  onChange?: (n: number) => void;
-  value: number;
+  classes: Record<ClassNames, string>
+  imgSrc: string
+  name: string
+  onChange?: (n: number) => void
+  value: number
 }
 
-type Props = OwnProps;
+type Props = OwnProps
 
 export const FoodTile: React.FC<Props> = (props: Props) => {
-  const { classes, imgSrc, name, value, onChange } = props;
+  const { classes, imgSrc, name, value, onChange } = props
 
   const handleChange = (value: number) => () => {
     if (value < 0) {
-      value = 0;
+      value = 0
     }
-    if (onChange) {
-      onChange(value);
+    if (onChange != null) {
+      onChange(value)
     }
-  };
+  }
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    handleChange(Number(event.target.value))();
-  };
+    handleChange(Number(event.target.value))()
+  }
 
   return (
     <div className={classes.container}>
@@ -62,50 +62,50 @@ export const FoodTile: React.FC<Props> = (props: Props) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const styles = (theme: CustomTheme): Record<ClassNames, CSSProperties> => ({
   container: {
-    display: "flex",
-    alignItems: "center",
-    flexDirection: "column",
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column',
     width: 200
   },
   nameContainer: {
-    display: "flex",
-    justifyContent: "space-between",
+    display: 'flex',
+    justifyContent: 'space-between',
     paddingTop: theme.spacing(1),
-    width: "100%"
+    width: '100%'
   },
   name: {
-    color: "black",
-    fontWeight: "bold"
+    color: 'black',
+    fontWeight: 'bold'
   },
   controls: {
-    display: "flex",
-    alignItems: "center",
-    "& > svg": {
-      color: "grey"
+    display: 'flex',
+    alignItems: 'center',
+    '& > svg': {
+      color: 'grey'
     }
   },
   button: {
-    color: "grey"
+    color: 'grey'
   },
   image: {
     height: 100
   },
   input: {
-    border: "none",
-    outline: "none",
-    mozAppearance: "textfield",
+    border: 'none',
+    outline: 'none',
+    mozAppearance: 'textfield',
     width: 30,
-    textAlign: "center"
+    textAlign: 'center'
   },
   value: {
     marginLeft: theme.spacing(0.5),
     marginRight: theme.spacing(0.5)
   }
-});
+})
 
-export default withStyles(styles)(FoodTile);
+export default withStyles(styles)(FoodTile)
