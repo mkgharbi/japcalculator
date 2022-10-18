@@ -17,15 +17,15 @@ export const Image: React.FC<Props> = (props: Props) => {
   const { classes } = props
   return <div className={classes.container}></div>
 }
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
 const styles = (theme: CustomTheme): Record<ClassNames, any> => ({
   container: (props: Props) => ({
     background: `url(${props.imgUrl})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     height: props.height,
-    width: props.width
-  })
+    width: props.width,
+  }),
 })
 
 export default withStyles(styles)(Image)

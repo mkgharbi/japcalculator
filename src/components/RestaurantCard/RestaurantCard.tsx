@@ -24,21 +24,12 @@ export const RestaurantCard: React.FC<Props> = (props: Props) => {
   return (
     <Card className={classes.container}>
       <CardActionArea>
-        <CardMedia
-          image={imgSrc}
-          title="Japanese Restaurant"
-          className={classes.picture}
-        />
+        <CardMedia image={imgSrc} title='Japanese Restaurant' className={classes.picture} />
         <CardContent>
-          <Typography
-            gutterBottom
-            variant="h6"
-            component="h2"
-            className={classes.restaurantName}
-          >
+          <Typography gutterBottom variant='h6' component='h2' className={classes.restaurantName}>
             {restaurantName}
           </Typography>
-          <Typography variant="body2" className={classes.address}>
+          <Typography variant='body2' className={classes.address}>
             {address}
           </Typography>
         </CardContent>
@@ -46,21 +37,21 @@ export const RestaurantCard: React.FC<Props> = (props: Props) => {
     </Card>
   )
 }
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const styles = (theme: CustomTheme): Record<ClassNames, CSSProperties> => ({
   container: {
     width: 220,
-    textAlign: 'left'
+    textAlign: 'left',
   },
   picture: {
-    height: 128
+    height: 128,
   },
   restaurantName: {
-    fontSize: 15
+    fontSize: 15,
   },
   address: {
-    fontSize: 10
-  }
+    fontSize: 10,
+  },
 })
 
 export default withStyles(styles)(RestaurantCard)

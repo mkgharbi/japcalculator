@@ -24,6 +24,7 @@ export const Loader: React.FC<Props> = (props: Props) => {
   return <CircularProgress size={SIZE_TYPES[size]} />
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const styles = (theme: CustomTheme): Record<ClassNames, CSSProperties> => ({
   container: {}
 })
