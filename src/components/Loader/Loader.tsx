@@ -1,31 +1,32 @@
-import React from "react";
-import { withStyles } from "@material-ui/core/styles";
-import { CSSProperties } from "@material-ui/styles";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import React from 'react'
+import { withStyles } from '@material-ui/core/styles'
+import { CSSProperties } from '@material-ui/styles'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
-import { CustomTheme } from "../../style/theme";
+import { CustomTheme } from '../../style/theme'
 
-type ClassNames = "container";
-type SizeType = "small" | "medium" | "large";
+type ClassNames = 'container'
+type SizeType = 'small' | 'medium' | 'large'
 interface OwnProps {
-  size?: SizeType;
+  size?: SizeType
 }
 
 const SIZE_TYPES: { [k in SizeType]: number } = {
   small: 24,
   medium: 48,
   large: 80
-};
+}
 
-type Props = OwnProps;
+type Props = OwnProps
 
 export const Loader: React.FC<Props> = (props: Props) => {
-  const { size = "small" } = props;
-  return <CircularProgress size={SIZE_TYPES[size]} />;
-};
+  const { size = 'small' } = props
+  return <CircularProgress size={SIZE_TYPES[size]} />
+}
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const styles = (theme: CustomTheme): Record<ClassNames, CSSProperties> => ({
   container: {}
-});
+})
 
-export default withStyles(styles)(Loader);
+export default withStyles(styles)(Loader)
