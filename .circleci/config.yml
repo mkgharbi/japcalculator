@@ -16,8 +16,8 @@ jobs:
             - v1-dependencies-
 
       - run: npm install
+      - run: npm run audit  --audit-level=critical
       - run: npm run eslint
-      - run: npm run eslint:fix
 
       - save_cache:
           paths:
