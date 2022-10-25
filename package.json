@@ -31,7 +31,8 @@
     "eject": "react-scripts eject",
     "bootstrap": "node ./bootstrap-fauna-database.js",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx src/",
-    "eslint:fix": "eslint --ext .js,.jsx,.ts,.tsx src/ --fix"
+    "eslint:fix": "eslint --ext .js,.jsx,.ts,.tsx src/ --fix",
+    "audit:ci": "audit  --audit-level=critical"
   },
   "eslintConfig": {
     "extends": "react-app"
