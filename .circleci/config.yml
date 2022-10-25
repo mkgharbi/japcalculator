@@ -16,8 +16,6 @@ jobs:
             - v1-dependencies-
 
       - run: npm install
-      - run: npm run eslint
-      - run: npm run eslint:fix
 
       - save_cache:
           paths:
